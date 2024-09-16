@@ -2,6 +2,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: black;
   box-sizing: border-box;
+
   margin: 0;
   border: 2px solid blue;
   min-height: 100vh;
@@ -9,30 +10,40 @@ body {
   grid-template-rows: auto 1fr auto;
   /*grid, to fill up the viewport*/
 }
-
+header{
+  /* padding: 20px; */
+  padding-top: 5px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: white;
+}
 .logo {
-  height: 10vh;
+  height: 5vh;
+
 } .logo img{
   width: 100%;
   height: 100%;
   /* w&h needs to be set for object-fit to work*/
-  border: 1px solid green;
+  /* border: 1px solid green; */
   object-fit: contain;
 
-}.navmenu {
-  /* border: 1px solid red; */
+}.navbar {
+  border: 1px solid red;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   border-bottom: 1px solid black;
-  /* padding-top: 15px; */
-  padding: 15px 5vw;
-}.navmenu a{
+  height: 5vh;
+  /* padding: 15px 5vw; */
+
+}.navbar a{
   text-decoration: none;
   color: black;
-  /* padding: 0 8px; */
+  /* margin: 10px; */
 }
  main {
+  margin-top: 10vh; /*because of fixed header*/
   /* border: 1px solid red; */
 } footer {
   border: 1px solid red;
@@ -44,14 +55,21 @@ body {
 } #vision-bg {
   background-image: url(img/pexels-copy.jpg)}
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   header {
     display: flex;
+
   } .logo{
+    flex: 0 1 auto;
+    min-height: 50px;
+
+  } .navbar {
     flex: 1 0 auto;
-  } .navmenu {
-    flex: 3 0 auto;
+    justify-content: flex-start;
     align-content: flex-end;
     padding: 0;
+    padding-left: 20px;
+  } .navbar a {
+    padding: 0 20px;
   }
 }
