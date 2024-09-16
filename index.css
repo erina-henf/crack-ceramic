@@ -11,7 +11,7 @@ body {
   /*grid, to fill up the viewport*/
 }
 header{
-  /* padding: 20px; */
+  border: 1px solid yellowgreen;
   padding-top: 5px;
   position: fixed;
   top: 0;
@@ -31,6 +31,7 @@ header{
 }.navbar {
   border: 1px solid red;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid black;
@@ -40,7 +41,8 @@ header{
 }.navbar a{
   text-decoration: none;
   color: black;
-  /* margin: 10px; */
+  padding-right: 20px;
+
 }
  main {
   margin-top: 10vh; /*because of fixed header*/
@@ -56,6 +58,7 @@ header{
   background-image: url(img/pexels-copy.jpg)}
 
 @media screen and (min-width: 768px) {
+
   header {
     display: flex;
 
@@ -67,9 +70,17 @@ header{
     flex: 1 0 auto;
     justify-content: flex-start;
     align-content: flex-end;
-    padding: 0;
-    padding-left: 20px;
+    padding-left: 10vw;
+
   } .navbar a {
-    padding: 0 20px;
+    background-color: gray;
+    padding-left: 20px;
+    padding-top: 1em;
+    border-radius: 10px 10px 0 0;
+  } main {
+    display: flex;
+    flex-direction: column;
+    max-width: 860px;
+    justify-self: center;
   }
 }
