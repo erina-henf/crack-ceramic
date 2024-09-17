@@ -1,47 +1,170 @@
-
 body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-sizing: border-box;
   margin: 0;
-  
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
 }
 
-/* HEADER */
-header {
-  border: 1px solid red  ;
-}.logo{
-  grid-area: "logo";
-  border: 1px solid black;
-  
-}.navmenu {
-  grid-area: "navmenu";
-}.navlist {
+
+/* ====== HEADER ======= */
+
+header{
+  padding-top: 5px;
+  position: fixed;
+  height: 85px;
+  top: 0;
+  width: 100vw;
+  background-color: white;
+}
+
+#logo {
+  width: 100%;
+  height: 50%;
+  /* w&h needs to be set for object-fit to work*/
+  object-fit: contain;
+}
+.navbar {
+  border-bottom: 2px solid black;
+  /* padding-bottom: 5px; */
+  height: 50%;
   display: flex;
-  list-style: none;
-}.navlist a {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+} .navbar a {
   text-decoration: none;
-}.social-media {
-  border: 1px solid black;
-  grid-area:"sm";
-}
+  color: black;
+  padding: 0px 10px;
 
-/* MAIN */
-main{
-  grid-area: "main";
-}
-/* FOOTER */
-footer{
-  grid-area: "foot";
+} .navbar a:hover {
+  border-bottom: 3px double black;
+  font-weight: bold;
+
+} .navbar a:active {
+  text-shadow: 1px 1px 2px #000, 0 0 .5em #000, 0 0 .1em #000;
 }
 
 
-/* RESPONSIVE */
-@media screen and (min-width: 900) {
-  body {
-    display: grid;
-    grid-template: 1fr 1fr 1fr / 1fr 2fr 1fr;
-    grid-template-areas:
-    "logo navmenu sm"
-    "main main main"
-    "foot foot foot"; 
+/* ====== H1-H6 FONT & STYLE ======= */
+
+h1, h2 { text-align: center; }
+
+h1 {
+  font-size: 7vw;
+  margin-top: 95px;
+  width: 100%;
+  color: aliceblue;
+  text-shadow: 3px 3px 2px #000, 0 0 .1em #000, 0 0 .1em #000;
+  background-position-y: center;
+  /* padding: 1.5rem 0; */
+  padding: 5vw 0;
+
+} #home-banner {
+  background-image: url(img/about-blur.jpg);
+} #crew-banner {
+  background-image: url();
+} #workshop-banner {
+  background-image: url();
+} #shop-banner {
+  background-image: url();
+}
+.home-content h2 {
+  margin-top: 0;
+  border-bottom: 3px double black;
+  border-radius: 10px 10px 0 0;
+} h2 {
+  margin-bottom: 0;
+  padding: 1.5vw 0;
+
+
+
+}
+
+
+/* ====== MAIN ======= */
+
+.home-content img {
+  display: block;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: contain;
+}
+.home-content section {
+  margin: 20px 5px;
+  border: 3px double #000;
+  border-radius: 10px;
+  padding-bottom: 20px;
+
+} .home-content section p {
+  padding: 0 20px;
+}
+
+/* ====== FOOTER ======= */
+
+ footer {
+  text-align: center;
+}
+
+
+/* ====== MEDIA QUERY ======= */
+
+@media screen and (min-width: 768px) {
+
+  header {
+    display: flex;
+    height: 40px;
+    padding-bottom: 5px;
+
+  } #logo{
+    height: 100%;
+    flex: 0 1 auto;
+
+  } .navbar {
+    margin-left: -132px;
+    /*neg margin viewport center*/
+    padding-bottom: 5px;
+    height: 100%;
+    flex: 1 0 auto;
+    justify-content: center;
+    align-content: flex-end;
+
+  } .navbar a {
+    padding: 0 30px;
+
+  } h1 {
+    margin-top: 50px;
+    font-size: 3rem;
+  } main {
+    max-width: 80%;
+  }
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+  } .home-content section {
+    max-width: 860px;
+  }
+  .home-content img {
+    width: 50%;
   }
 }
+
+@media screen and (min-width: 1800px) {
+  .home-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  } .about {
+    flex: 0 1 48%;
+  } .our-vision {
+    flex: 0 1 48%;
+  } .contact {
+    flex: 0 1 50%;
+  }
+}
+
+/* Validated 2024-09-17*/
