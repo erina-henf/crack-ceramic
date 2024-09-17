@@ -8,28 +8,28 @@ body {
   grid-template-rows: auto auto 1fr auto;
   /*grid, to fill up the viewport*/
 }
+
+
+
+
+/* ====== HEADER ======= */
+
 header{
-  /* border-bottom: 1px solid red; */
-  display: flex;
-  flex-direction: column;
   padding-top: 5px;
   position: fixed;
   height: 85px;
   top: 0;
   width: 100vw;
   background-color: white;
-  /* visibility: hidden; */
 }
 .logo { height: 50%; }
 .logo img {
   width: 100%;
   height: 100%;
   /* w&h needs to be set for object-fit to work*/
-  /* border: 1px solid blue; */
-  object-fit: contain;}
-
-  .navbar {
-  /* border: 1px solid red; */
+  object-fit: contain;
+}
+.navbar {
   height: 50%;
   display: flex;
   flex-wrap: wrap;
@@ -42,33 +42,49 @@ header{
   padding: 0px 10px;
 
 } .navbar a:hover {
-  /* background-color: #3aa98f; */
-  /* border-radius: 10px 10px 0 0; */
   border-bottom: 3px double black;
   font-weight: bold;
-  /* text-shadow: 1px 1px 3px #fff, 0 0 .1em #fff, 0 0 .1em #fff; */
+
+} .navbar a:active {
+  text-shadow: 1px 1px 2px #000, 0 0 .5em #000, 0 0 .1em #000;
 }
-h1, h2 {
-  text-align: center;
-} h1 {
+
+
+
+
+/* ====== H1-H6 FONT & STYLE ======= */
+
+h1, h2 { text-align: center; }
+
+h1 {
   font-size: 1.5em;
   margin-top: 90px;
   color: aliceblue;
   text-shadow: 3px 3px 2px #494bb2, 0 0 .1em #494bb2, 0 0 .1em #494bb2;
   background-position-y: center;
   padding: 2rem 0;
+
 } #home-banner {
   background-image: url(img/camille-minouflet-bl.jpg);
+} #crew-banner {
+  background-image: url();
+} #workshop-banner {
+  background-image: url();
+} #shop-banner {
+  background-image: url();
 }
-
 .home-content h2 {
-  /* color: #2628c9; */
-  /* background-color: aliceblue; */
   border-bottom: 3px double black;
   border-radius: 10px 10px 0 0;
   margin-top: 0;
-
 }
+
+
+
+
+/* ====== MAIN ======= */
+
+
 .home-content section {
   margin: 20px 5px;
   /* background-color: beige; */
@@ -79,35 +95,42 @@ h1, h2 {
 } .home-content section p {
   padding: 0 20px;
 }
+
+
+
+
+/* ====== FOOTER ======= */
+
  footer {
   /* border: 1px solid red; */
-
-
 }
 
+
+
+
+/* ====== RESPONSIVE ======= */
 
 @media screen and (min-width: 768px) {
 
   header {
-    border: 1px solid red;
-    flex-direction: row;
-    align-items: flex-end;
+    display: flex;
+    height: 50px;
+    padding-bottom: 5px;
 
   } .logo{
-    border: 1px solid red;
+    height: 100%;
     flex: 0 1 auto;
-    /* min-height: 50px; */
 
   } .navbar {
-    border: 1px solid red;
+    margin-left: -132px;
+    /*för centrering av nav-länkar utifrån viewport*/
+    height: 100%;
     flex: 1 0 auto;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: flex-end;
-    padding-left: 10vw;
 
   } .navbar a {
-
-    padding-top: .6em;
+    padding: 0 30px;
 
   } main {
     display: flex;
@@ -115,9 +138,10 @@ h1, h2 {
     max-width: 860px;
     justify-self: center;
   } h1 {
-    /* max-width: 100vw; */
-    /* margin-top: 5%; */
+    margin-top: 60px;
     padding: 80px 0 ;
-
   }
 }
+
+
+/* Validated 2024-09-17*/
