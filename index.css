@@ -2,14 +2,11 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   box-sizing: border-box;
   margin: 0;
-  /* border: 2px solid blue; */
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   /*grid, to fill up the viewport*/
 }
-
-
 
 
 /* ====== HEADER ======= */
@@ -50,19 +47,17 @@ header{
 }
 
 
-
-
 /* ====== H1-H6 FONT & STYLE ======= */
 
 h1, h2 { text-align: center; }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 7vw;
   margin-top: 90px;
   color: aliceblue;
   text-shadow: 3px 3px 2px #494bb2, 0 0 .1em #494bb2, 0 0 .1em #494bb2;
   background-position-y: center;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 
 } #home-banner {
   background-image: url(img/camille-minouflet-bl.jpg);
@@ -80,8 +75,6 @@ h1 {
 }
 
 
-
-
 /* ====== MAIN ======= */
 
 
@@ -97,15 +90,11 @@ h1 {
 }
 
 
-
-
 /* ====== FOOTER ======= */
 
  footer {
   /* border: 1px solid red; */
 }
-
-
 
 
 /* ====== RESPONSIVE ======= */
@@ -139,7 +128,8 @@ h1 {
     justify-self: center;
   } h1 {
     margin-top: 60px;
-    padding: 80px 0 ;
+    /* padding: 6.5rem 0 ; */
+    font-size: 3rem;
   }
 }
 
