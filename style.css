@@ -11,55 +11,52 @@ body {
 /* ====== HEADER ======= */
 
 header{
-  padding-top: 5px;
+  padding: 5px;
   position: fixed;
   height: 85px;
   top: 0;
   width: 100vw;
   background-color: white;
 }
-
 #logo {
   width: 100%;
-  height: 50%;
+  height: 47%;
   /* w&h needs to be set for object-fit to work*/
   object-fit: contain;
 }
 .navbar {
-  border-bottom: 2px solid black;
-  /* padding-bottom: 5px; */
-  height: 50%;
+  height: 47%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
-} .navbar a {
+}
+.navbar a {
   text-decoration: none;
   color: black;
   padding: 0px 10px;
-
-} .navbar a:hover {
+}
+.navbar a:hover {
   border-bottom: 3px double black;
   font-weight: bold;
-
-} .navbar a:active {
+}
+.navbar a:active {
   text-shadow: 1px 1px 2px #000, 0 0 .5em #000, 0 0 .1em #000;
 }
 
 
 /* ====== H1-H6 FONT & STYLE ======= */
 
-h1, h2 { text-align: center; }
-
 h1 {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
   font-size: 7vw;
-  margin-top: 95px;
+  margin-top: 105px;
+  text-align: center;
   width: 100%;
   color: aliceblue;
   text-shadow: 3px 3px 2px #000, 0 0 .1em #000, 0 0 .1em #000;
   background-position-y: center;
-  /* padding: 1.5rem 0; */
   padding: 5vw 0;
 
 } #home-banner {
@@ -70,17 +67,14 @@ h1 {
   background-image: url();
 } #shop-banner {
   background-image: url();
-}
-.home-content h2 {
-  margin-top: 0;
-  border-bottom: 3px double black;
-  border-radius: 10px 10px 0 0;
+
 } h2 {
   margin-bottom: 0;
+  margin-top: 0;
   padding: 1.5vw 0;
-
-
-
+  border-bottom: 3px double black;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
 }
 
 
@@ -98,10 +92,11 @@ h1 {
   border: 3px double #000;
   border-radius: 10px;
   padding-bottom: 20px;
-
-} .home-content section p {
+}
+.home-content section p {
   padding: 0 20px;
 }
+
 
 /* ====== FOOTER ======= */
 
@@ -152,6 +147,7 @@ h1 {
     width: 50%;
   }
 }
+
 
 @media screen and (min-width: 1800px) {
   .home-content {
