@@ -1,86 +1,123 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: black;
   box-sizing: border-box;
-
   margin: 0;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   min-height: 100vh;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   /*grid, to fill up the viewport*/
 }
 header{
-  border: 1px solid yellowgreen;
+  /* border-bottom: 1px solid red; */
+  display: flex;
+  flex-direction: column;
   padding-top: 5px;
   position: fixed;
+  height: 85px;
   top: 0;
   width: 100vw;
   background-color: white;
+  /* visibility: hidden; */
 }
-.logo {
-  height: 5vh;
-
-} .logo img{
+.logo { height: 50%; }
+.logo img {
   width: 100%;
   height: 100%;
   /* w&h needs to be set for object-fit to work*/
-  /* border: 1px solid green; */
-  object-fit: contain;
+  /* border: 1px solid blue; */
+  object-fit: contain;}
 
-}.navbar {
-  border: 1px solid red;
+  .navbar {
+  /* border: 1px solid red; */
+  height: 50%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid black;
-  height: 5vh;
-  /* padding: 15px 5vw; */
 
-}.navbar a{
+} .navbar a {
   text-decoration: none;
   color: black;
-  padding-right: 20px;
+  padding: 0px 10px;
+
+} .navbar a:hover {
+  /* background-color: #3aa98f; */
+  /* border-radius: 10px 10px 0 0; */
+  border-bottom: 3px double black;
+  font-weight: bold;
+  /* text-shadow: 1px 1px 3px #fff, 0 0 .1em #fff, 0 0 .1em #fff; */
+}
+h1, h2 {
+  text-align: center;
+} h1 {
+  font-size: 1.5em;
+  margin-top: 90px;
+  color: aliceblue;
+  text-shadow: 3px 3px 2px #494bb2, 0 0 .1em #494bb2, 0 0 .1em #494bb2;
+  background-position-y: center;
+  padding: 2rem 0;
+} #home-banner {
+  background-image: url(img/camille-minouflet-bl.jpg);
+}
+
+.home-content h2 {
+  /* color: #2628c9; */
+  /* background-color: aliceblue; */
+  border-bottom: 3px double black;
+  border-radius: 10px 10px 0 0;
+  margin-top: 0;
 
 }
- main {
-  margin-top: 10vh; /*because of fixed header*/
+.home-content section {
+  margin: 20px 5px;
+  /* background-color: beige; */
+  border: 3px double #000;
+  border-radius: 10px 10px 0 0;
+  padding-bottom: 20px;
+
+} .home-content section p {
+  padding: 0 20px;
+}
+ footer {
   /* border: 1px solid red; */
-} footer {
-  border: 1px solid red;
+
 
 }
 
-#about-bg {
-  background-image: url(img/tasha-kostyuk-gSkEvclp-SU-unsplash.jpg);
-} #vision-bg {
-  background-image: url(img/pexels-copy.jpg)}
 
 @media screen and (min-width: 768px) {
 
   header {
-    display: flex;
+    border: 1px solid red;
+    flex-direction: row;
+    align-items: flex-end;
 
   } .logo{
+    border: 1px solid red;
     flex: 0 1 auto;
-    min-height: 50px;
+    /* min-height: 50px; */
 
   } .navbar {
+    border: 1px solid red;
     flex: 1 0 auto;
     justify-content: flex-start;
     align-content: flex-end;
     padding-left: 10vw;
 
   } .navbar a {
-    background-color: gray;
-    padding-left: 20px;
-    padding-top: 1em;
-    border-radius: 10px 10px 0 0;
+
+    padding-top: .6em;
+
   } main {
     display: flex;
     flex-direction: column;
     max-width: 860px;
     justify-self: center;
+  } h1 {
+    /* max-width: 100vw; */
+    /* margin-top: 5%; */
+    padding: 80px 0 ;
+
   }
 }
