@@ -1,0 +1,61 @@
+@font-face {
+  font-family: MyFont;
+  src: url(fonts/Montserrat/Montserrat-Regular.ttf);
+}
+body {
+
+  font-family: MyFont;
+  color: antiquewhite;
+  /* background-color: #202020; */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+
+/* ===== HEADER NAVBAR ===== */
+
+header {
+  display: grid;
+  grid-template: auto / 60px 1fr;
+  grid-template-areas:
+    "logo navbar";
+}
+
+#logo {
+  grid-area: logo;
+  /* border: 1px solid red; */
+  width: 100%;
+  object-fit: contain;
+}
+#navbar {
+  grid-area: navbar;
+  /* border: 1px solid red; */
+}
+
+
+/* ===== BANNER ===== */
+  .banner {
+    grid-area: banner;
+    border: 1px solid green;
+  }
+
+
+/* ===== MAIN CONTENT ===== */
+main {
+  grid-area: content;
+}
+
+
+/* ===== SECTIONS ===== */
+section img {
+  height: 10em;
+  width: 60%;
+}
+
+
+/* ===== FOOTER ===== */
+  footer {
+    grid-area: footer;
+  }
