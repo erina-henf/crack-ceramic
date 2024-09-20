@@ -4,19 +4,17 @@
   padding: 0;
 }
 @font-face {
-  font-family: MyFont;
-  src: url(fonts/Montserrat/Montserrat-Regular.ttf);
+  font-family: h1Headers;
+  src: url(fonts/Cabin_Sketch/CabinSketch-Bold.ttf);
 }
-html {
-  font-family: 'Courier New', Courier, monospace;
-  /* font-size: ; */
+@font-face {
+  font-family: h2Headers;
+  src: url(fonts/Reenie_Beanie/ReenieBeanie-Regular.ttf);
 }
-
 body {
-  font-family: MyFont;
-  color: antiquewhite;
-  background-color: #202020;
-  min-height: 100vh;
+  background-color: #1a1a1a;
+  height: 100vh;
+
   display: grid;
   grid-template-rows: auto auto 1fr auto;
   grid-template-areas:
@@ -24,172 +22,233 @@ body {
     "banner"
     "content"
     "footer";
+
+  font-family: 'Courier New', Courier, monospace;
+  color: #BBAE9C;
 }
 
 
-/* ====== HEADER ======= */
-
-header{
+/* ======= HEADER, HAMBURGER MENU ====== */
+header {
   grid-area: navbar;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  /* padding: 5px; */
-  /* position: fixed; */
-  /* height: 85px; */
-  /* top: 0; */
-  width: 100vw;
-  background-color: white;
+  display: flex;
+  background-color: #ffedd5;
+  height: 60px;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  box-shadow: -1px 0 3px #000;
+}
+header > a {
+  flex: 0 1 104px;
+  z-index: 10;
+  /*logo on top - desktop screen*/
 }
 #logo {
   width: 100%;
-  /* height: 47%; */
-  /* w&h needs to be set for object-fit to work*/
+  height: 100%;
+  padding-left: 15px;
   object-fit: contain;
 }
-.navbar {
-  /* height: 47%; */
+nav {
+  flex: 1 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  height: 100%;
 }
-.navbar a {
+nav svg {
+  height: 100%;
+  width: 60px;
+  padding-right: 25px;
+}
+nav a {
+  font-size: x-large;
   text-decoration: none;
-  color: black;
-  /* padding: 0px 10px; */
-}
-.navbar a:hover {
-  border-bottom: 3px double black;
-  font-weight: bold;
-}
-.navbar a:active {
-  text-shadow: 1px 1px 2px #000, 0 0 .5em #000, 0 0 .1em #000;
-}
-
-
-/* ====== H1-H6 FONT & STYLE ======= */
-
-h1 {
-  /* border-top: 2px solid black;
-  border-bottom: 2px solid black; */
-  grid-area: banner;
-  font-size: 7vw;
-  /* margin-top: 95px; */
-  text-align: center;
+  font-weight: bolder;
+  height: auto;
   width: 100%;
-  color: aliceblue;
-  text-shadow: 3px 3px 2px #000, 0 0 .1em #000, 0 0 .1em #000;
-  background-position-y: center;
-  /* padding: 5vw 0; */
+  padding: 20px 30px;
+}
+nav a:hover {
+  box-shadow: 0 1px 3px #8aa370, 0 -1px 3px #8aa370;
+}
+#sidemenu-activated {
+  display: none;
+  /* remove checkbox visually */
+}
+.btn-open-sidemenu, .btn-close-sidemenu {
+  display: flex;
+}
+.side-menu {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
 
-} .home-banner {
-  background-image: url(img/about-blur.jpg);
-} #crew-banner {
-  background-image: url();
-} #workshop-banner {
-  background-image: url();
-} #shop-banner {
-  background-image: url();
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
 
-} h2 {
-  margin-bottom: 0;
-  margin-top: 0;
-  padding: 1.5vw 0;
-  border-bottom: 3px double black;
-  border-radius: 10px 10px 0 0;
-  text-align: center;
+  background-color: #000;
+  box-shadow: -1px 0 3px #8aa370;
+}
+
+/* "If checkbox is active, do following
+to the sibling (~ sibling selector) element" */
+#sidemenu-activated:checked ~ .side-menu, nav a {
+  display: flex;
+  color: #ffedd5;
+  /* If checkbox is activated the side menu will display
+  and the text color vill change */
 }
 
 
-/* ====== MAIN CONTENT ======= */
+/* ======= H1-H6 AND BANNER ====== */
+h1, h2 {
+  font-size: 3.4rem;
+}
+h1 {
+  margin: auto;
+  padding: 0 5px;
+  font-family: h1Headers;
+  color: #000;
+  text-align: center;
+  background-color: #faebd7d0;
+  border: 2px solid black;
+  border-radius: 30px;
+}
+h2 {
+  font-family: h2Headers;
+  font-weight: lighter;
+}
+.banner {
+  grid-area: banner;
+  display: flex;
+  background-position-y: center;
+  background-size: cover;
+  margin-top: 60px;
+  height: 20vw;
+  max-height: 400px;
+  min-height: 150px;
+}
+.home-banner {
+  width: 100%;
+  background-image: url(img/tasha-kostyuk-gSkEvclp-SU-unsplash.jpg);
+}
+
+
+/* ======= MAIN CONTENT ====== */
 
 main {
+  margin-top: 5vw;
+}
+.home-content {
   grid-area: content;
-  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-
-.home-content img {
-  display: block;
+main section {
+  margin: 40px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+}
+section img {
+  margin-bottom: 35px;
   width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  object-fit: contain;
+  border-radius: 50%;
 }
-.home-content section {
-  /* margin: 20px 5px; */
-  border: 3px double #000;
-  border-radius: 10px;
-  padding-bottom: 20px;
-}
-.home-content section p {
-  padding: 0 20px;
+address {
+  font-size: large;
 }
 
-
-/* ====== FOOTER ======= */
-
- footer {
+/* ======= FOOTER ====== */
+footer {
+  margin-top: 2.5vw;
+  box-shadow: -1px 0 3px #ffedd5;
   grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
   text-align: center;
 }
 
 
-/* ====== MEDIA QUERY ======= */
+/* ======= MEDIA QUARIES ====== */
 
-@media screen and (min-width: 768px) {
-
-  header {
+@media screen and (min-width: 900px) {
+  :not(#sidemenu-activated:checked) ~ .side-menu {
+  /* if checkbox is NOT checked, style the sibling element (~ sibling selector)
+  like following */
+    background-color: #ffedd5;
     display: flex;
-    height: 40px;
-    padding-bottom: 5px;
+    flex-direction: row;
+    align-items: flex-end;
+    /*nav-links to the top..somehow..*/
+    justify-content: flex-end;
+    /*nav-links to the right*/
 
-  } #logo{
-    height: 100%;
-    flex: 0 1 auto;
-
-  } .navbar {
-    margin-left: -132px;
-    /*neg margin viewport center*/
-    padding-bottom: 5px;
-    height: 100%;
-    flex: 1 0 auto;
-    justify-content: center;
-    align-content: flex-end;
-
-  } .navbar a {
+    position: unset;
+    width: 100%;
+    box-shadow: none;
+    /*remove vertical shadow*/
+  }
+  :not(#sidemenu-activated:checked) ~ nav a {
+  /* if checkbox is NOT checked, style the sibling element (~ sibling selector)
+  like following */
     padding: 0 30px;
-
-  } h1 {
-    margin-top: 50px;
-    font-size: 3rem;
-  } main {
-    max-width: 80%;
+    padding-top: 100%;
+    color: black;
+    width: auto;
   }
-  .home-content {
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-  } .home-content section {
-    max-width: 860px;
+  .btn-open-sidemenu, .btn-close-sidemenu {
+    display: none;
+    /* remove hamb-icon and closing-icon from navbar*/
   }
-  .home-content img {
-    width: 50%;
+  nav a:hover {
+    background-color: #8aa370;
+    font-weight: bolder;
+    box-shadow: none;
   }
 }
 
-
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1250px) {
+  :not(#sidemenu-activated:checked) ~ .side-menu {
+  /* if checkbox is NOT checked, style the sibling element (~ sibling selector)
+  like following */
+    margin-left: -104px;
+    justify-content: center;
+    /* center nav-links on larger screen*/
+  }
   .home-content {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-  } .about {
-    flex: 0 1 48%;
-  } .our-vision {
-    flex: 0 1 48%;
-  } .contact {
-    flex: 0 1 50%;
+    justify-content: space-around;
+    justify-self: center;
+    align-items: flex-start;
+  }
+  .about {
+    flex: 1 0 47%;
+  }
+  .our-vision {
+    flex: 1 0 47%;
+  }
+  .contact {
+    flex: 1 0 100%;
+    max-height: 200px;
   }
 }
 
-/* Validated 2024-09-17*/
+@media screen and (min-width: 1800px) {
+  section p {
+    font-size: 1.1em;
+  }
+}
+
+/* Validated 2024-09-20 */
